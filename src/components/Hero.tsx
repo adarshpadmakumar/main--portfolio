@@ -9,44 +9,38 @@ const TAGS = [
   "Project rescue",
 ];
 
-const STATS = [
-  { value: "140", suffix: "+", label: "Projects\nshipped" },
-  { value: "60", suffix: "+", label: "Web & UI/UX\nbuilds" },
-  { value: "25", suffix: "+", label: "SaaS & enterprise\nplatforms" },
-  { value: "18", suffix: "+", label: "AI & automation\nrollouts" },
-];
-
 export default function Hero() {
   return (
     <main
       id="home"
       className="bg-ink py-[clamp(56px,8vw,96px)] pb-[clamp(48px,7vw,84px)] text-cream"
     >
-      <div className="mx-auto grid max-w-[1180px] grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-center gap-[clamp(36px,5vw,64px)] px-[clamp(20px,4vw,40px)]">
+      <div className="mx-auto grid max-w-[1180px] grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-start gap-[clamp(36px,5vw,64px)] px-[clamp(20px,4vw,40px)]">
         <div className="flex flex-col gap-[26px]">
-          <div className="flex items-center gap-3.5 text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
-            <span className="h-px w-[26px] bg-gold" />
-            Freelance project manager · Bengaluru · Working worldwide
+          <div className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
+            Freelance project manager · Bengaluru, India · Working worldwide
           </div>
           <h1 className="text-pretty font-display text-[clamp(34px,5.2vw,60px)] font-normal leading-[1.08] tracking-[-0.015em] text-cream">
             Freelance project manager for{" "}
-            <em className="italic text-gold">web, UI/UX, SaaS and AI</em>{" "}
+            <em className="italic text-gold">web, UI/UX, SaaS, and AI</em>{" "}
             projects.
           </h1>
           <p className="max-w-[56ch] text-base leading-[1.75] text-cream/[0.82]">
-            I&apos;m Adarsh P Kumar. I run website design and development, UI/UX,
-            SaaS, enterprise, SEO growth, branding and AI automation projects
-            end to end — scope, schedule, budget and launch.{" "}
-            <span className="font-medium text-cream">
-              140+ projects shipped, 13 years of delivery, 98% client
-              retention.
+            I&apos;m Adarsh P Kumar, a freelance project manager based in
+            Bengaluru, India. I run end-to-end website design and
+            development, UI/UX, SaaS, enterprise, SEO growth, branding, and
+            AI automation projects, covering scope, schedule, budget, and
+            launch.
+            <span className="mt-2 block font-medium text-cream">
+              With over 140 projects shipped and 13 years of delivery
+              experience, I have a 98% client-retention rate.
             </span>
           </p>
           <div className="flex flex-wrap gap-2">
             {TAGS.map((tag) => (
               <span
                 key={tag}
-                className="border border-cream/[0.24] px-3 py-[7px] text-[9.5px] font-medium uppercase tracking-[0.12em] text-cream/[0.78]"
+                className="rounded-full border border-cream/[0.24] px-4 py-[7px] text-[9.5px] font-medium uppercase tracking-[0.12em] text-cream/[0.78]"
               >
                 {tag}
               </span>
@@ -55,41 +49,34 @@ export default function Hero() {
           <div className="flex flex-wrap gap-3 pt-1">
             <Link
               href="#contact"
-              className="inline-flex min-h-12 items-center bg-gold px-[26px] py-4 text-[11px] font-medium uppercase tracking-[0.16em] text-ink hover:bg-gold-light"
+              className="inline-flex min-h-12 items-center rounded-md bg-gold px-[26px] py-4 text-[11px] font-medium uppercase tracking-[0.16em] text-ink hover:bg-gold-light"
             >
               Get a free project quote →
             </Link>
             <Link
               href="#work"
-              className="inline-flex min-h-12 items-center border border-cream/[0.42] px-6 py-4 text-[11px] font-medium uppercase tracking-[0.16em] text-cream hover:border-gold"
+              className="inline-flex min-h-12 items-center rounded-md border border-cream/[0.42] px-6 py-4 text-[11px] font-medium uppercase tracking-[0.16em] text-cream hover:border-gold"
             >
               See case studies →
             </Link>
           </div>
-          <div className="flex flex-wrap gap-[22px] text-[10px] font-medium uppercase tracking-[0.14em] text-cream/[0.55]">
-            <span>Reply within 1 working day</span>
-            <span>Fixed-fee or retainer</span>
-            <span>Clients in IN · US · UK · UAE · AU</span>
-          </div>
-          <div className="mt-3 grid grid-cols-[repeat(auto-fit,minmax(132px,1fr))] gap-x-7 gap-y-6 border-t border-cream/[0.18] pt-[26px]">
-            {STATS.map((stat) => (
-              <div key={stat.label} className="flex flex-col gap-[9px]">
-                <span className="font-cinzel text-[34px] font-medium leading-none text-cream">
-                  {stat.value}
-                  <span className="text-gold">{stat.suffix}</span>
-                </span>
-                <span className="whitespace-pre-line text-[9.5px] font-medium uppercase leading-[1.7] tracking-[0.13em] text-cream/[0.52]">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
+          <div className="flex flex-nowrap items-center gap-2.5 text-[8.5px] font-medium uppercase tracking-[0.06em] text-cream/[0.55] sm:gap-4 sm:text-[9px] sm:tracking-[0.1em] lg:gap-[22px] lg:text-[10px] lg:tracking-[0.14em]">
+            <span className="flex-none whitespace-nowrap">
+              Reply within 1 working day
+            </span>
+            <span className="flex-none whitespace-nowrap">
+              Fixed-fee or retainer
+            </span>
+            <span className="flex-none whitespace-nowrap">
+              Clients in IN · US · UK · UAE · AU
+            </span>
           </div>
         </div>
 
-        <div className="flex flex-col gap-[18px]">
+        <div className="mt-[41px] flex flex-col gap-[18px]">
           <div
             role="img"
-            aria-label="Wireframe of a shipped booking interface built on a 34-component design system."
+            aria-label="Wireframe of the SIMS Capital loan calculator and application flow, built from scratch for the site relaunch."
             className="border border-gold/30 bg-ink-dark/[0.55]"
           >
             <div className="flex items-center gap-2.5 border-b border-cream/[0.14] px-[18px] py-[13px]">
@@ -97,7 +84,7 @@ export default function Hero() {
               <span className="h-2 w-2 rounded-full bg-cream/[0.28]" />
               <span className="h-2 w-2 rounded-full bg-gold" />
               <span className="ml-2 flex-1 border border-cream/[0.16] px-3 py-[5px] text-[9.5px] font-medium uppercase tracking-[0.12em] text-cream/50">
-                northbay.health / booking
+                simscapital.in / loans
               </span>
             </div>
             <div className="grid grid-cols-[1.35fr_1fr] gap-[18px] px-[18px] py-[22px]">
@@ -116,7 +103,7 @@ export default function Hero() {
               </div>
             </div>
             <div className="flex justify-between gap-2.5 border-t border-cream/[0.14] px-[18px] py-[11px] text-[9px] font-medium uppercase tracking-[0.14em] text-cream/[0.42]">
-              <span>Design system · 34 components</span>
+              <span>Live gold-rate ticker · Loan calculator</span>
               <span className="text-gold">Shipped</span>
             </div>
           </div>

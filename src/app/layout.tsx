@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cinzel, Cormorant_Garamond, Montserrat } from "next/font/google";
 import "./globals.css";
+import { siteConfig } from "@/lib/site-config";
 
 const cinzel = Cinzel({
   variable: "--font-cinzel",
@@ -22,19 +23,28 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Freelance Project Manager for Web, UI/UX, SaaS & AI Projects | Adarsh P Kumar",
+  title:
+    "Adarsh P Kumar — Freelance Project Manager for Web, UI/UX, SaaS & AI | Bengaluru",
   description:
-    "Adarsh P Kumar is a freelance project manager in Bengaluru running website design and development, UI/UX, SaaS, enterprise, SEO growth, branding and AI automation projects end to end. 140+ projects shipped, 98% client retention.",
+    "Freelance project manager running web, UI/UX, SaaS, enterprise and AI projects end to end. 140+ projects shipped, 13 years delivery, 98% client retention. Clients in IN, US, UK, UAE, AU.",
   themeColor: "#0F2E23",
 };
 
-const jsonLd = {
+const AREA_SERVED = [
+  "India",
+  "United States",
+  "United Kingdom",
+  "United Arab Emirates",
+  "Australia",
+];
+
+const professionalServiceJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Adarsh P Kumar — Freelance Project Management",
   description:
     "Freelance project management for website design and development, UI/UX, SaaS, enterprise applications, SEO growth, branding, and AI and automation projects.",
-  areaServed: ["India", "United States", "United Kingdom", "United Arab Emirates", "Australia"],
+  areaServed: AREA_SERVED,
   address: {
     "@type": "PostalAddress",
     addressLocality: "Bengaluru",
@@ -49,6 +59,37 @@ const jsonLd = {
   },
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Adarsh P Kumar",
+  jobTitle: "Freelance Project Manager",
+  worksFor: {
+    "@type": "Organization",
+    name: "Self-employed",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Bengaluru",
+    addressRegion: "Karnataka",
+    addressCountry: "IN",
+  },
+  email: `mailto:${siteConfig.email}`,
+  telephone: siteConfig.phone,
+  url: "https://adarshpkumar.com",
+  sameAs: [siteConfig.linkedinUrl],
+  knowsAbout: [
+    "UI/UX design",
+    "Web development",
+    "Enterprise applications",
+    "SaaS product delivery",
+    "Growth marketing",
+    "Technical SEO",
+    "Branding",
+    "AI and automation",
+  ],
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -58,7 +99,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(professionalServiceJsonLd),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
       </head>
       <body className="bg-cream">

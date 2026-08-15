@@ -1,6 +1,5 @@
 import Logo from "./Logo";
 import Eyebrow from "./Eyebrow";
-import TechStack from "./TechStack";
 
 export default function About() {
   return (
@@ -13,7 +12,7 @@ export default function About() {
         <Eyebrow className="text-ink">About</Eyebrow>
         <h2
           id="about-h"
-          className="font-display text-[clamp(30px,4vw,46px)] font-normal leading-[1.12] tracking-[-0.012em] text-ink"
+          className="whitespace-nowrap font-display text-[clamp(20px,3.4vw,46px)] font-normal leading-[1.12] tracking-[-0.012em] text-ink"
         >
           The person who makes sure it actually ships.
         </h2>
@@ -42,12 +41,13 @@ export default function About() {
           <p className="max-w-[68ch] text-[17px] leading-[1.7] text-ink/[0.82]">
             I&apos;ve spent{" "}
             <span className="font-medium text-ink">
-              six-plus years managing design and development projects and
-              digital marketing campaigns in-market
-            </span>
-            , and{" "}
+              six-plus years managing design, development, and digital
+              marketing campaigns in-house
+            </span>{" "}
+            and{" "}
             <span className="font-medium text-ink">
-              seven-plus years running the same kinds of work as a freelancer
+              seven-plus years running the same kinds of work as a freelance
+              project manager
             </span>
             . Those years overlap, which is the point: I&apos;ve been doing
             agency-grade delivery and independent delivery side by side long
@@ -55,14 +55,14 @@ export default function About() {
           </p>
           <p className="max-w-[68ch] text-[15px] leading-[1.8] text-ink/[0.76]">
             What clients hire me for isn&apos;t a methodology. It&apos;s the
-            thing underneath it — one person who holds the scope, chases the
-            designer, reads the developer&apos;s pull request comments,
+            thing underneath it, where one person who holds the scope, chases
+            the designer, reads the developer&apos;s pull request comments,
             checks the ad spend against the plan, and tells you the truth
             about the timeline while there&apos;s still time to do something
             about it.
           </p>
           <p className="max-w-[68ch] text-[15px] leading-[1.8] text-ink/[0.76]">
-            I work with founders, marketing heads and agency owners who have
+            I work with founders, marketing heads, and agency owners who have
             good people but no one holding the middle. Sometimes that&apos;s
             a full build from brief to launch. Sometimes it&apos;s a project
             four months late that needs re-baselining. Either way you get a
@@ -73,10 +73,9 @@ export default function About() {
             <span className="font-medium text-ink">
               98% of my freelance clients come back.
             </span>{" "}
-            Not because of a process document — because nothing on their
+            Not because of a process document, but because nothing on their
             project ever went quiet.
           </p>
-          <TechStack />
         </div>
       </div>
     </section>

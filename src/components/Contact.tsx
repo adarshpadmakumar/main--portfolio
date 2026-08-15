@@ -35,9 +35,9 @@ export default function Contact() {
             Tell me what&apos;s late.
           </h2>
           <p className="max-w-[56ch] text-[15px] leading-[1.8] text-cream/[0.76]">
-            Thirty minutes, no pitch deck. You describe the project, I tell
-            you what I&apos;d do first and whether I&apos;m the right person
-            for it. If I&apos;m not, I&apos;ll say so and point you
+            Thirty minutes, no pitch deck. You describe the project, and I
+            tell you what I&apos;d do first and whether I&apos;m the right
+            person for it. If I&apos;m not, I&apos;ll say so and point you
             somewhere better.
           </p>
           <div className="mt-2 flex flex-col">

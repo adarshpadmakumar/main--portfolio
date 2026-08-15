@@ -1,16 +1,16 @@
 const FACTS = [
   {
     strong: "13 years of delivery experience",
-    rest: " across agency-side and independent work, spanning UI/UX, web and enterprise development, SaaS, growth marketing, branding and AI automation.",
+    rest: " across agency-side and independent work, spanning UI/UX, web and enterprise development, SaaS, growth marketing, branding, and AI automation.",
   },
   {
     strong: "98% of freelance clients return",
-    rest: " for a second project or move onto a retainer after the first engagement ends.",
+    rest: " for a second project or move on to a retainer after the first engagement ends.",
   },
   {
     strong:
-      "Every project gets a written scope, a weekly status note and one named point of contact",
-    rest: " — no silent weeks, no surprise invoices.",
+      "Every project gets a written scope, a weekly status note, and one named point of contact",
+    rest: ", with no silent weeks and no surprise invoices.",
   },
 ];
 
@@ -24,12 +24,12 @@ export default function KeyFacts() {
         {FACTS.map((fact, i) => (
           <div
             key={fact.strong}
-            className={`flex items-start gap-3.5 py-7 ${
+            className={`flex items-start gap-3.5 py-14 ${
               i === 0
-                ? "pr-[34px] pl-0"
+                ? "pr-[56px] pl-0"
                 : i === FACTS.length - 1
-                  ? "border-l border-cream/[0.12] pl-[34px] pr-0"
-                  : "border-l border-cream/[0.12] px-[34px]"
+                  ? "border-l border-cream/[0.12] pl-[56px] pr-0"
+                  : "border-l border-cream/[0.12] px-[56px]"
             }`}
           >
             <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-gold" />

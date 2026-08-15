@@ -1,42 +1,52 @@
 import Eyebrow from "./Eyebrow";
 
-const FAQ_LEFT = [
+const FAQS = [
   {
     q: "What does Adarsh P Kumar do?",
-    a: "He is a freelance project manager who runs UI/UX design, web development, enterprise applications, SaaS products, growth marketing and SEO, branding, and AI and automation projects end to end. He owns scope, schedule, budget, team coordination and client communication so founders and marketing heads don't have to chase their own project.",
+    a: "He is a freelance project manager who runs UI/UX design, web development, enterprise applications, SaaS products, growth marketing and SEO, branding, and AI and automation projects end to end. He owns scope, schedule, budget, team coordination, and client communication so founders and marketing heads don't have to chase their own project.",
   },
   {
     q: "How much experience does he have?",
-    a: "Six-plus years managing design, development and digital marketing projects in-market, and seven-plus years running both project types as an independent freelancer. Client retention across the freelance practice is 98%.",
+    a: "Six-plus years managing design, development, and marketing campaigns in-house and seven-plus years running the same kind of work as a freelancer, with 13 years total, split across agency-side and independent delivery. That overlap is why the process holds up under real deadlines, not just on paper.",
   },
   {
     q: "What does 98% client retention mean?",
-    a: "98 out of every 100 clients came back for a second project or stayed on retainer after the first engagement ended. It's measured across seven years of freelance work, not a single year.",
+    a: "98% of clients who complete one project with him come back for a second or move on to an ongoing retainer. It's tracked from actual repeat bookings, not a marketing estimate — evidence that the delivery process, not just the launch, is what keeps clients coming back.",
   },
   {
     q: "Which services does he offer?",
-    a: "Seven: UI/UX design, web development, enterprise applications, SaaS product delivery, growth marketing and SEO, branding, and AI and automation. Most engagements combine two or three of them.",
+    a: "UI/UX design, website and web application development, enterprise application delivery, SaaS product delivery, growth marketing and technical SEO, branding, and AI and automation are run individually or combined under one schedule when a project spans more than one discipline.",
   },
-];
-
-const FAQ_RIGHT = [
   {
     q: "How does he charge?",
-    a: "Three ways: a fixed fee per project when scope is clear, a monthly retainer for ongoing delivery or fractional leadership, and a day rate for audits and short engagements. Every option is quoted in writing before work starts.",
+    a: "Fixed fees for scoped projects with a defined deliverable and timeline, or a monthly retainer for ongoing work and growth programs. Every engagement starts with a written scope and quote before work begins so there's no ambiguity on cost.",
   },
   {
     q: "Does he work with clients outside India?",
-    a: "Yes. He's based in Bengaluru and works remotely with clients across the US, UK, UAE and Australia, with a daily overlap window agreed at kickoff for each time zone.",
+    a: "Yes. Current and past clients are based in India, the US, the UK, the UAE, and Australia, with delivery runs async-first and calls scheduled around overlapping working hours.",
   },
   {
     q: "Can he take over a project that's already late?",
-    a: "Yes — project rescue is standard work. It starts with a paid two-week audit that produces a re-baselined scope, a realistic launch date, and a written list of what has to be cut or added to hit it.",
+    a: "Yes. Project rescue is one of the most common reasons clients get in touch. It starts with a short paid audit of the current state, then a re-baselined scope and schedule the client signs off on before work restarts.",
   },
   {
     q: "How quickly can a project start?",
-    a: "Discovery calls happen within two working days of an enquiry. Most projects kick off one to two weeks after a signed scope, depending on current capacity.",
+    a: "Most projects start within one to two weeks of a signed scope, depending on current capacity. Two project slots are open from October 2026. Book a call to check availability.",
   },
 ];
+
+const FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 function FAQItem({
   q,
@@ -50,15 +60,18 @@ function FAQItem({
   return (
     <details
       open={defaultOpen}
-      className="border-b border-ink/[0.16] py-5 [&_summary::-webkit-details-marker]:hidden"
+      className="group border-b border-ink/[0.16] py-8 [&_summary::-webkit-details-marker]:hidden"
     >
-      <summary className="flex min-h-11 cursor-pointer items-baseline justify-between gap-4 font-display text-xl font-medium leading-[1.35] text-ink">
+      <summary className="flex min-h-11 cursor-pointer items-center justify-between gap-6 font-display text-[22px] font-medium leading-[1.3] text-ink sm:text-[28px]">
         {q}
-        <span aria-hidden="true" className="flex-none text-[15px] text-gold">
+        <span
+          aria-hidden="true"
+          className="flex-none text-[60px] leading-none text-gold transition-transform group-open:rotate-45"
+        >
           +
         </span>
       </summary>
-      <p className="mt-3 pr-[30px] text-[14.5px] leading-[1.8] text-ink/[0.76]">
+      <p className="mt-4 max-w-[70ch] text-[15px] leading-[1.8] text-ink/[0.76]">
         {a}
       </p>
     </details>
@@ -70,28 +83,25 @@ export default function FAQ() {
     <section
       id="faq"
       aria-labelledby="faq-h"
-      className="mx-auto max-w-[1180px] px-[clamp(20px,4vw,40px)] py-[clamp(64px,9vw,104px)]"
+      className="mx-auto min-h-screen max-w-[1180px] px-[clamp(20px,4vw,40px)] pt-6 pb-[clamp(64px,9vw,104px)]"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }}
+      />
       <div className="mb-[52px] flex max-w-[760px] flex-col gap-[18px]">
         <Eyebrow className="text-ink">Questions</Eyebrow>
         <h2
           id="faq-h"
           className="font-display text-[clamp(30px,4vw,46px)] font-normal leading-[1.12] tracking-[-0.012em] text-ink"
         >
-          What clients ask before they hire me.
+          Questions clients ask before they hire a freelance project manager.
         </h2>
       </div>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] gap-x-[clamp(28px,4vw,56px)]">
-        <div>
-          {FAQ_LEFT.map((item, i) => (
-            <FAQItem key={item.q} {...item} defaultOpen={i === 0} />
-          ))}
-        </div>
-        <div>
-          {FAQ_RIGHT.map((item) => (
-            <FAQItem key={item.q} {...item} />
-          ))}
-        </div>
+      <div className="flex flex-col">
+        {FAQS.map((item, i) => (
+          <FAQItem key={item.q} {...item} defaultOpen={i === 0} />
+        ))}
       </div>
     </section>
   );

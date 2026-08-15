@@ -14,7 +14,7 @@ const SERVICES = [
   {
     title: "UI/UX design",
     description:
-      "Research, user flows, wireframes, prototypes and design systems — run from brief to signed-off, developer-ready files with revision rounds capped and every decision logged.",
+      "Research, user flows, wireframes, prototypes, and design systems that run from brief to signed-off, developer-ready files, with revision rounds capped and every decision logged.",
     tags: ["Research", "Prototypes", "Design systems"],
     icon: (
       <svg {...ICON_PROPS}>
@@ -26,7 +26,7 @@ const SERVICES = [
   {
     title: "Web development",
     description:
-      "Marketing sites, ecommerce and headless CMS builds delivered through sprints, QA gates and managed releases. Core Web Vitals and technical SEO are acceptance criteria, not afterthoughts.",
+      "Marketing sites, e-commerce, and headless CMS builds delivered through sprints, QA gates, and managed releases. Core Web Vitals and technical SEO are acceptance criteria, not afterthoughts.",
     tags: ["Sprints", "QA gates", "Releases"],
     icon: (
       <svg {...ICON_PROPS}>
@@ -37,7 +37,7 @@ const SERVICES = [
   {
     title: "Enterprise applications",
     description:
-      "Internal tools, portals, system integrations and legacy migrations — run with change control, stakeholder sign-off gates and a cutover plan that survives contact with a real user base.",
+      "Internal tools, portals, system integrations, and legacy migrations run with change control, stakeholder sign-off gates, and a cutover plan that survives contact with a real user base.",
     tags: ["Integrations", "Migrations", "Change control"],
     icon: (
       <svg {...ICON_PROPS}>
@@ -49,9 +49,9 @@ const SERVICES = [
     ),
   },
   {
-    title: "SaaS",
+    title: "SaaS delivery",
     description:
-      "MVP to v2 delivery for SaaS products: roadmap, release trains, multi-tenant rollout and the post-launch iteration loop where most products quietly stall.",
+      "MVP to v2 delivery for SaaS products: roadmap, release trains, multi-tenant rollout, and the post-launch iteration loop where most products quietly stall.",
     tags: ["MVP", "Roadmap", "Release trains"],
     icon: (
       <svg {...ICON_PROPS}>
@@ -64,7 +64,7 @@ const SERVICES = [
   {
     title: "Growth marketing (SEO)",
     description:
-      "Technical SEO, content programmes, paid campaigns and analytics run against one plan and one dashboard — so spend, rankings and pipeline sit on the same page instead of in four tools.",
+      "I run technical SEO, content programs, paid campaigns, and analytics under one plan and one dashboard, so spend, rankings, and pipeline sit on the same page instead of in four tools.",
     tags: ["Technical SEO", "Content", "Analytics"],
     icon: (
       <svg {...ICON_PROPS}>
@@ -76,7 +76,7 @@ const SERVICES = [
   {
     title: "Branding",
     description:
-      "Identity, naming, messaging and brand guidelines — plus the part most projects skip: rolling the new brand across every touchpoint that already exists, on a tracked schedule.",
+      "Identity, naming, messaging, and brand guidelines, plus the part most projects skip: rolling the new brand across every touchpoint that already exists, on a tracked schedule.",
     tags: ["Identity", "Messaging", "Rollout"],
     icon: (
       <svg {...ICON_PROPS}>
@@ -100,8 +100,8 @@ export default function Services() {
             Seven things I get hired to run.
           </h2>
           <p className="max-w-[62ch] text-[15px] leading-[1.8] text-cream/[0.76]">
-            Most engagements combine two or three — a UI/UX phase feeding a
-            web build, or a SaaS release followed by a growth programme. One
+            Most engagements combine two or three: a UI/UX phase feeding a
+            web build or a SaaS release followed by a growth program. One
             schedule covers all of it.
           </p>
         </div>
@@ -110,7 +110,7 @@ export default function Services() {
           {SERVICES.map((service) => (
             <div
               key={service.title}
-              className="flex flex-col gap-3 bg-ink p-[34px] hover:bg-ink-mid"
+              className="flex flex-col gap-3 bg-ink p-[34px] transition-colors hover:bg-ink-mid"
             >
               {service.icon}
               <h3 className="mt-2 font-display text-2xl font-medium text-cream">
@@ -132,7 +132,7 @@ export default function Services() {
             </div>
           ))}
 
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] items-center gap-[clamp(24px,3vw,44px)] bg-ink-mid px-[34px] py-10 [grid-column:1/-1]">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] items-center gap-[clamp(24px,3vw,44px)] bg-ink px-[34px] py-10 transition-colors hover:bg-ink-mid [grid-column:1/-1]">
             <div className="flex flex-col gap-3">
               <svg {...ICON_PROPS}>
                 <circle cx="5.5" cy="6" r="2.4" />
@@ -144,10 +144,10 @@ export default function Services() {
                 AI &amp; automation
               </h3>
               <p className="max-w-[60ch] text-sm leading-[1.75] text-cream/[0.78]">
-                Scoping and delivering AI features, internal copilots and
-                workflow automation — from pilot to production, with
-                evaluation criteria agreed up front and human review built
-                into anything that touches a customer.
+                I cover scoping and delivering AI features, internal
+                copilots, and workflow automation, from pilot to production,
+                with evaluation criteria agreed up front and human review
+                built into anything that touches a customer.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-2.5">
