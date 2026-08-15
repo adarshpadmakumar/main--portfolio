@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Cinzel, Cormorant_Garamond, Montserrat } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { siteConfig } from "@/lib/site-config";
+
+const GA_MEASUREMENT_ID = "G-EWEFEMWG2R";
 
 const cinzel = Cinzel({
   variable: "--font-cinzel",
@@ -109,6 +112,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="bg-cream">
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         <a
           href="#home"
           className="absolute left-[-9999px] top-0 z-[200] bg-gold px-5 py-3 text-[11px] font-medium uppercase tracking-[0.14em] text-ink focus:left-3 focus:top-3"
