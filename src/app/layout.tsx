@@ -26,6 +26,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.siteUrl),
   title:
     "Adarsh P Kumar — Freelance Project Manager for Web, UI/UX, SaaS & AI | Bengaluru",
   description:
@@ -79,7 +80,7 @@ const personJsonLd = {
   },
   email: `mailto:${siteConfig.email}`,
   telephone: siteConfig.phone,
-  url: "https://adarshpkumar.com",
+  url: siteConfig.siteUrl,
   sameAs: [siteConfig.linkedinUrl],
   knowsAbout: [
     "UI/UX design",

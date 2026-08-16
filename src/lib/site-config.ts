@@ -1,4 +1,5 @@
 export const siteConfig = {
+  siteUrl: "https://adarshpk.com",
   email: "adarshpk.51@gmail.com",
   phone: "+91 98765 43210",
   phoneHref: "+919876543210",
