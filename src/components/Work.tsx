@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Eyebrow from "./Eyebrow";
 
@@ -35,6 +38,17 @@ const SECONDARY_CASES = [
 ];
 
 export default function Work() {
+  const [atreyaActive, setAtreyaActive] = useState(false);
+  const [flippedCards, setFlippedCards] = useState<boolean[]>(() =>
+    SECONDARY_CASES.map(() => false),
+  );
+
+  function toggleFlipped(index: number) {
+    setFlippedCards((prev) =>
+      prev.map((flipped, i) => (i === index ? !flipped : flipped)),
+    );
+  }
+
   return (
     <section
       id="work"
@@ -79,15 +93,48 @@ export default function Work() {
             </p>
           </div>
 
-          <div className="m-[clamp(20px,2.6vw,34px)]">
+          <div
+            role="button"
+            tabIndex={0}
+            aria-pressed={atreyaActive}
+            aria-label="Toggle between Google Search Console and Google Analytics views"
+            onClick={() => setAtreyaActive((prev) => !prev)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setAtreyaActive((prev) => !prev);
+              }
+            }}
+            className="m-[clamp(20px,2.6vw,34px)] cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+          >
             {/* Source tags */}
             <div className="mb-3 flex items-center gap-2">
-              <span className="rounded-full border border-ink/[0.18] px-3 py-[7px] text-[9px] font-medium uppercase tracking-[0.12em] text-ink/70 transition-colors group-hover:border-ink/[0.18] group-hover:text-ink/40">
-                <span className="mr-1.5 inline-block h-[6px] w-[6px] rounded-full bg-gold transition-opacity group-hover:opacity-0" />
+              <span
+                className={`rounded-full border px-3 py-[7px] text-[9px] font-medium uppercase tracking-[0.12em] transition-colors ${
+                  atreyaActive
+                    ? "border-ink/[0.18] text-ink/40"
+                    : "border-ink/[0.18] text-ink/70 group-hover:text-ink/40"
+                }`}
+              >
+                <span
+                  className={`mr-1.5 inline-block h-[6px] w-[6px] rounded-full bg-gold transition-opacity ${
+                    atreyaActive ? "opacity-0" : "opacity-100 group-hover:opacity-0"
+                  }`}
+                />
                 Google Search Console
               </span>
-              <span className="rounded-full border border-ink/[0.18] px-3 py-[7px] text-[9px] font-medium uppercase tracking-[0.12em] text-ink/40 transition-colors group-hover:border-gold/50 group-hover:text-ink/70">
-                <span className="mr-1.5 inline-block h-[6px] w-[6px] rounded-full bg-gold opacity-0 transition-opacity group-hover:opacity-100" />
+              <span
+                className={`rounded-full border px-3 py-[7px] text-[9px] font-medium uppercase tracking-[0.12em] transition-colors ${
+                  atreyaActive
+                    ? "border-gold/50 text-ink/70"
+                    : "border-ink/[0.18] text-ink/40 group-hover:border-gold/50 group-hover:text-ink/70"
+                }`}
+              >
+                <span
+                  className={`mr-1.5 inline-block h-[6px] w-[6px] rounded-full bg-gold transition-opacity ${
+                    atreyaActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                  }`}
+                />
                 Google Analytics
               </span>
             </div>
@@ -109,7 +156,9 @@ export default function Work() {
                   src="/work/atreya-ga4.jpeg"
                   alt="Google Analytics 4 dashboard for the Atreya Hospital SEO audit"
                   fill
-                  className="object-contain object-center opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  className={`object-contain object-center transition-opacity duration-500 ${
+                    atreyaActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                  }`}
                   sizes="(min-width: 1024px) 560px, 100vw"
                 />
                 {/* glass reflection */}
@@ -140,10 +189,32 @@ export default function Work() {
       </div>
 
       <div className="mt-6 grid grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] gap-6">
-        {SECONDARY_CASES.map((item) => (
-          <div key={item.title} className="group [perspective:1500px]">
-            <div className="relative h-[820px] transition-transform duration-700 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] min-[860px]:h-[640px] min-[1180px]:h-[500px]">
-              <div className="absolute inset-0 flex flex-col gap-3 overflow-hidden rounded-2xl border border-ink/[0.16] bg-card p-[34px] [backface-visibility:hidden]">
+        {SECONDARY_CASES.map((item, index) => {
+          const isFlipped = flippedCards[index];
+          return (
+          <div
+            key={item.title}
+            role="button"
+            tabIndex={0}
+            aria-pressed={isFlipped}
+            aria-label={`Show a website preview for ${item.title}`}
+            onClick={() => toggleFlipped(index)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                toggleFlipped(index);
+              }
+            }}
+            className="group cursor-pointer [perspective:1500px] [-webkit-perspective:1500px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+          >
+            <div
+              className={`relative h-[820px] transition-transform duration-700 ease-out [-webkit-transform-style:preserve-3d] [transform-style:preserve-3d] min-[860px]:h-[640px] min-[1180px]:h-[500px] ${
+                isFlipped
+                  ? "[transform:rotateY(180deg)]"
+                  : "group-hover:[transform:rotateY(180deg)]"
+              }`}
+            >
+              <div className="absolute inset-0 flex flex-col gap-3 overflow-hidden rounded-2xl border border-ink/[0.16] bg-card p-[34px] [-webkit-backface-visibility:hidden] [backface-visibility:hidden]">
                 <div className="flex items-center justify-between gap-3 text-[10px] font-medium uppercase tracking-[0.14em] text-ink/50">
                   <span>{item.date}</span>
                   <span
@@ -231,11 +302,16 @@ export default function Work() {
                   </div>
                 )}
                 <span className="mt-auto text-[9.5px] font-medium uppercase tracking-[0.14em] text-ink/40">
-                  Hover to see the site →
+                  <span className="hidden [@media(hover:hover)]:inline">
+                    Hover to see the site →
+                  </span>
+                  <span className="inline [@media(hover:hover)]:hidden">
+                    Tap to see the site →
+                  </span>
                 </span>
               </div>
 
-              <div className="absolute inset-0 overflow-hidden rounded-2xl border border-ink/[0.16] [backface-visibility:hidden] [transform:rotateY(180deg)]">
+              <div className="absolute inset-0 overflow-hidden rounded-2xl border border-ink/[0.16] [-webkit-backface-visibility:hidden] [backface-visibility:hidden] [-webkit-transform:rotateY(180deg)] [transform:rotateY(180deg)]">
                 <Image
                   src={item.image}
                   alt={`${item.title} website screenshot`}
@@ -252,7 +328,8 @@ export default function Work() {
               </div>
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
