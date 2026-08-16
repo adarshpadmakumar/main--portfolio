@@ -6,6 +6,7 @@ import { siteConfig } from "@/lib/site-config";
 import { SERVICES } from "@/components/Services";
 
 const GA_MEASUREMENT_ID = "G-0ED5L9DVY8";
+const CLARITY_PROJECT_ID = "y3cjx31stt";
 
 const cinzel = Cinzel({
   variable: "--font-cinzel",
@@ -115,9 +116,8 @@ const jsonLd = {
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Services",
-        itemListElement: ALL_SERVICES.map((service, i) => ({
+        itemListElement: ALL_SERVICES.map((service) => ({
           "@type": "Offer",
-          position: i + 1,
           itemOffered: {
             "@type": "Service",
             name: service.title,
@@ -190,6 +190,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "${CLARITY_PROJECT_ID}");
           `}
         </Script>
         <a
