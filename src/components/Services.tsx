@@ -10,7 +10,7 @@ const ICON_PROPS = {
   "aria-hidden": true,
 } as const;
 
-const SERVICES = [
+export const SERVICES = [
   {
     title: "UI/UX design",
     description:
