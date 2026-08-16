@@ -13,19 +13,19 @@ export default function Hero() {
   return (
     <main
       id="home"
-      className="bg-ink py-[clamp(56px,8vw,96px)] pb-[clamp(48px,7vw,84px)] text-cream"
+      className="bg-ink pt-[clamp(18px,2.4vw,36px)] pb-[clamp(32px,5vw,64px)] text-cream"
     >
       <div className="mx-auto grid max-w-[1180px] grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-center gap-[clamp(36px,5vw,64px)] px-[clamp(20px,4vw,40px)]">
-        <div className="flex flex-col gap-[26px]">
+        <div className="flex flex-col gap-5">
           <div className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
             Freelance project manager · Bengaluru, India · Working worldwide
           </div>
-          <h1 className="text-pretty font-display text-[clamp(34px,5.2vw,60px)] font-normal leading-[1.08] tracking-[-0.015em] text-cream">
+          <h1 className="text-pretty font-display text-[clamp(30px,4.4vw,50px)] font-normal leading-[1.1] tracking-[-0.015em] text-cream">
             Freelance project manager for{" "}
             <em className="italic text-gold">web, UI/UX, SaaS, and AI</em>{" "}
             projects.
           </h1>
-          <p className="max-w-[56ch] text-base leading-[1.75] text-cream/[0.82]">
+          <p className="max-w-[56ch] text-base leading-[1.65] text-cream/[0.82]">
             I&apos;m Adarsh P Kumar, a freelance project manager based in
             Bengaluru, India. I run end-to-end{" "}
             <span className="font-medium text-cream">
