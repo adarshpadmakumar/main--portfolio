@@ -27,10 +27,9 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
-  title:
-    "Adarsh P Kumar — Freelance Project Manager for Web, UI/UX, SaaS & AI | Bengaluru",
+  title: "Affordable Website Design & Development | Adarsh P Kumar",
   description:
-    "Freelance project manager running web, UI/UX, SaaS, enterprise and AI projects end to end. 140+ projects shipped, 13 years delivery, 98% client retention. Clients in IN, US, UK, UAE, AU.",
+    "Affordable website design & development with fixed-fee pricing. 140+ projects delivered, 98% client retention, 13 years experience. Get a free quote today.",
   themeColor: "#0F2E23",
 };
 
@@ -45,7 +44,7 @@ const AREA_SERVED = [
 const professionalServiceJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "Adarsh P Kumar — Freelance Project Management",
+  name: "Adarsh P Kumar, Freelance Project Management",
   description:
     "Freelance project management for website design and development, UI/UX, SaaS, enterprise applications, SEO growth, branding, and AI and automation projects.",
   areaServed: AREA_SERVED,

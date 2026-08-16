@@ -24,12 +24,12 @@ export default function KeyFacts() {
         {FACTS.map((fact, i) => (
           <div
             key={fact.strong}
-            className={`flex items-start gap-3.5 py-14 ${
+            className={`flex items-start gap-3.5 py-6 sm:py-14 ${
               i === 0
-                ? "pr-[56px] pl-0"
+                ? "sm:pr-[56px] sm:pl-0"
                 : i === FACTS.length - 1
-                  ? "border-l border-cream/[0.12] pl-[56px] pr-0"
-                  : "border-l border-cream/[0.12] px-[56px]"
+                  ? "border-t border-cream/[0.12] sm:border-t-0 sm:border-l sm:pl-[56px] sm:pr-0"
+                  : "border-t border-cream/[0.12] sm:border-t-0 sm:border-l sm:px-[56px]"
             }`}
           >
             <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-gold" />

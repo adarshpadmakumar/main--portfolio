@@ -15,7 +15,7 @@ export default function Hero() {
       id="home"
       className="bg-ink py-[clamp(56px,8vw,96px)] pb-[clamp(48px,7vw,84px)] text-cream"
     >
-      <div className="mx-auto grid max-w-[1180px] grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-start gap-[clamp(36px,5vw,64px)] px-[clamp(20px,4vw,40px)]">
+      <div className="mx-auto grid max-w-[1180px] grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-center gap-[clamp(36px,5vw,64px)] px-[clamp(20px,4vw,40px)]">
         <div className="flex flex-col gap-[26px]">
           <div className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
             Freelance project manager · Bengaluru, India · Working worldwide
@@ -27,10 +27,19 @@ export default function Hero() {
           </h1>
           <p className="max-w-[56ch] text-base leading-[1.75] text-cream/[0.82]">
             I&apos;m Adarsh P Kumar, a freelance project manager based in
-            Bengaluru, India. I run end-to-end website design and
-            development, UI/UX, SaaS, enterprise, SEO growth, branding, and
-            AI automation projects, covering scope, schedule, budget, and
-            launch.
+            Bengaluru, India. I run end-to-end{" "}
+            <span className="font-medium text-cream">
+              Website design and development
+            </span>
+            , <span className="font-medium text-cream">UI/UX</span>,{" "}
+            <span className="font-medium text-cream">SaaS</span>,{" "}
+            <span className="font-medium text-cream">
+              Enterprise application
+            </span>
+            , <span className="font-medium text-cream">SEO growth</span>,{" "}
+            <span className="font-medium text-cream">Branding</span>, and{" "}
+            <span className="font-medium text-cream">AI automation</span>{" "}
+            projects, covering scope, schedule, budget, and launch.
             <span className="mt-2 block font-medium text-cream">
               With over 140 projects shipped and 13 years of delivery
               experience, I have a 98% client-retention rate.
@@ -51,7 +60,7 @@ export default function Hero() {
               href="#contact"
               className="inline-flex min-h-12 items-center rounded-md bg-gold px-[26px] py-4 text-[11px] font-medium uppercase tracking-[0.16em] text-ink hover:bg-gold-light"
             >
-              Get a free project quote →
+              Book a 15 minute call →
             </Link>
             <Link
               href="#work"
@@ -73,7 +82,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="mt-[41px] flex flex-col gap-[18px]">
+        <div className="flex flex-col gap-5">
           <div
             role="img"
             aria-label="Wireframe of the SIMS Capital loan calculator and application flow, built from scratch for the site relaunch."
@@ -82,14 +91,17 @@ export default function Hero() {
             <div className="flex items-center gap-2.5 border-b border-cream/[0.14] px-[18px] py-[13px]">
               <span className="h-2 w-2 rounded-full bg-cream/[0.28]" />
               <span className="h-2 w-2 rounded-full bg-cream/[0.28]" />
-              <span className="h-2 w-2 rounded-full bg-gold" />
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-gold opacity-75 motion-safe:animate-ping" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
+              </span>
               <span className="ml-2 flex-1 border border-cream/[0.16] px-3 py-[5px] text-[9.5px] font-medium uppercase tracking-[0.12em] text-cream/50">
                 simscapital.in / loans
               </span>
             </div>
             <div className="grid grid-cols-[1.35fr_1fr] gap-[18px] px-[18px] py-[22px]">
               <div className="flex flex-col gap-[9px]">
-                <span className="block h-3 w-[62%] bg-gold/75" />
+                <span className="motion-safe:animate-pulse block h-3 w-[62%] bg-gold/75 [animation-duration:2.6s]" />
                 <span className="block h-[7px] w-[88%] bg-cream/20" />
                 <span className="block h-[7px] w-[74%] bg-cream/[0.14]" />
                 <span className="mt-1.5 block h-[26px] w-[40%] border border-gold" />
@@ -113,20 +125,29 @@ export default function Hero() {
               <span className="text-[9.5px] font-medium uppercase tracking-[0.18em] text-cream/[0.62]">
                 AI workflow · in production
               </span>
-              <span className="border border-gold/50 px-[11px] py-[5px] text-[9px] font-medium uppercase tracking-[0.14em] text-gold">
+              <span className="flex items-center gap-[7px] border border-gold/50 px-[11px] py-[5px] text-[9px] font-medium uppercase tracking-[0.14em] text-gold">
+                <span className="relative flex h-[5px] w-[5px]">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-gold opacity-75 motion-safe:animate-ping" />
+                  <span className="relative inline-flex h-[5px] w-[5px] rounded-full bg-gold" />
+                </span>
                 Live
               </span>
             </div>
             <div className="flex flex-wrap items-center gap-2">
-              {["Intake", "Classify", "Draft"].map((step) => (
+              {["Intake", "Classify", "Draft"].map((step, i) => (
                 <span key={step} className="contents">
                   <span className="border border-cream/20 px-[11px] py-2 text-[9px] font-medium uppercase tracking-[0.1em] text-cream/[0.78]">
                     {step}
                   </span>
-                  <span className="text-xs text-gold">→</span>
+                  <span
+                    className="motion-safe:animate-pulse text-xs text-gold [animation-duration:1.8s]"
+                    style={{ animationDelay: `${i * 0.3}s` }}
+                  >
+                    →
+                  </span>
                 </span>
               ))}
-              <span className="border border-gold px-[11px] py-2 text-[9px] font-medium uppercase tracking-[0.1em] text-gold">
+              <span className="motion-safe:animate-[glow-pulse_2.4s_ease-in-out_infinite] border border-gold px-[11px] py-2 text-[9px] font-medium uppercase tracking-[0.1em] text-gold">
                 Human review
               </span>
             </div>

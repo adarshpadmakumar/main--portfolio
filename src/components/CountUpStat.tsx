@@ -55,7 +55,7 @@ export default function CountUpStat({
   return (
     <div
       ref={ref}
-      className={`flex flex-col ${big ? "items-center gap-3 text-center" : "gap-[9px]"}`}
+      className={`flex min-w-0 flex-col ${big ? "items-center gap-3 text-center" : "gap-[9px]"}`}
     >
       <span
         className={`font-cinzel font-medium leading-none text-cream tabular-nums ${
@@ -68,7 +68,7 @@ export default function CountUpStat({
         <span className="text-gold">{suffix}</span>
       </span>
       <span
-        className={`whitespace-pre-line font-medium uppercase text-cream/[0.52] ${
+        className={`w-full max-w-full whitespace-pre-line break-words font-medium uppercase text-cream/[0.52] ${
           big
             ? "text-[13px] leading-[1.7] tracking-[0.18em]"
             : "text-[9.5px] leading-[1.7] tracking-[0.13em]"

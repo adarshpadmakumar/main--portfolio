@@ -19,7 +19,7 @@ export default function StatsShowcase() {
           </h2>
         </div>
         <div className="border-t border-cream/[0.18] pt-10">
-          <div className="grid grid-cols-4 gap-x-4 gap-y-10 sm:gap-x-10 lg:gap-x-16">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-10 lg:grid-cols-4 lg:gap-x-16">
             {STATS.map((stat) => (
               <CountUpStat
                 key={stat.label}

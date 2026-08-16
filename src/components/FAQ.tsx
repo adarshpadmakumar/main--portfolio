@@ -11,15 +11,15 @@ const FAQS = [
   },
   {
     q: "What does 98% client retention mean?",
-    a: "98% of clients who complete one project with him come back for a second or move on to an ongoing retainer. It's tracked from actual repeat bookings, not a marketing estimate — evidence that the delivery process, not just the launch, is what keeps clients coming back.",
+    a: "98% of clients who complete one project with him come back for a second or move on to an ongoing retainer. It's tracked from actual repeat bookings, not a marketing estimate. That's evidence the delivery process, not just the launch, is what keeps clients coming back.",
   },
   {
     q: "Which services does he offer?",
     a: "UI/UX design, website and web application development, enterprise application delivery, SaaS product delivery, growth marketing and technical SEO, branding, and AI and automation are run individually or combined under one schedule when a project spans more than one discipline.",
   },
   {
-    q: "How does he charge?",
-    a: "Fixed fees for scoped projects with a defined deliverable and timeline, or a monthly retainer for ongoing work and growth programs. Every engagement starts with a written scope and quote before work begins so there's no ambiguity on cost.",
+    q: "Is his website design and development affordable?",
+    a: "Yes. Fixed fees for scoped projects with a defined deliverable and timeline keep website design and development affordable and predictable, with no agency overhead. A monthly retainer is also available for ongoing work and growth programs. Every engagement starts with a written scope and quote before work begins so there's no ambiguity on cost.",
   },
   {
     q: "Does he work with clients outside India?",

@@ -23,7 +23,7 @@ export default function Contact() {
       aria-labelledby="contact-h"
       className="bg-ink-dark text-cream"
     >
-      <div className="mx-auto grid max-w-[1180px] grid-cols-[repeat(auto-fit,minmax(min(100%,380px),1fr))] items-start gap-[clamp(40px,5vw,72px)] px-[clamp(20px,4vw,40px)] py-[clamp(64px,9vw,104px)]">
+      <div className="mx-auto grid max-w-[1180px] grid-cols-[repeat(auto-fit,minmax(min(100%,380px),1fr))] items-center gap-[clamp(40px,5vw,72px)] px-[clamp(20px,4vw,40px)] py-[clamp(64px,9vw,104px)]">
         <div className="flex flex-col gap-5">
           <Eyebrow className="text-gold">Contact</Eyebrow>
           <h2
