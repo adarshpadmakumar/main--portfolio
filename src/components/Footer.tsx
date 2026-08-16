@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
+import CookiePreferencesButton from "./CookiePreferencesButton";
 
 export default function Footer() {
   return (
@@ -26,6 +28,13 @@ export default function Footer() {
           >
             LinkedIn
           </a>
+          <Link
+            href="/cookie-policy"
+            className="text-cream/[0.72] hover:text-gold"
+          >
+            Cookie Policy
+          </Link>
+          <CookiePreferencesButton />
         </div>
       </div>
     </footer>

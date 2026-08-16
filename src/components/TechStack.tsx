@@ -112,7 +112,7 @@ export default function TechStack() {
                         key={name}
                         title={name}
                         aria-label={name}
-                        className="group flex h-11 w-11 items-center justify-center border border-ink/[0.18] text-ink/70 transition-colors hover:border-gold hover:text-gold"
+                        className="group flex h-11 w-11 items-center justify-center rounded-lg border border-ink/[0.18] text-ink/70 transition-colors hover:border-gold hover:text-gold"
                       >
                         <Icon className="h-[19px] w-[19px]" />
                       </span>

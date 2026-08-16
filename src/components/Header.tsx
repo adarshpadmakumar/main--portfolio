@@ -42,7 +42,7 @@ export default function Header() {
           </div>
           <Link
             href="#contact"
-            className="inline-flex min-h-11 items-center whitespace-nowrap border border-gold px-3 py-[11px] text-[9px] font-medium uppercase tracking-[0.12em] text-cream hover:bg-gold/[0.16] sm:px-5 sm:text-[10px] sm:tracking-[0.18em]"
+            className="inline-flex min-h-11 items-center whitespace-nowrap rounded-2xl border border-gold px-3 py-[11px] text-[9px] font-medium uppercase tracking-[0.12em] text-cream hover:bg-gold/[0.16] sm:px-5 sm:text-[10px] sm:tracking-[0.18em]"
           >
             Book a call
           </Link>

@@ -4,7 +4,7 @@ import Eyebrow from "./Eyebrow";
 const STATS = [
   { value: 140, suffix: "+", label: "Projects\nshipped" },
   { value: 60, suffix: "+", label: "Web & UI/UX\nbuilds" },
-  { value: 25, suffix: "+", label: "SaaS & enterprise\nplatforms" },
+  { value: 13, suffix: "+", label: "SaaS & enterprise\nplatforms" },
   { value: 18, suffix: "+", label: "AI & automation\nrollouts" },
 ];
 
@@ -15,7 +15,10 @@ export default function StatsShowcase() {
         <div className="mb-10 flex max-w-[680px] flex-col gap-4">
           <Eyebrow className="text-gold">Track record</Eyebrow>
           <h2 className="font-display text-[clamp(11px,1.8vw,20px)] font-normal leading-[1.1] tracking-[-0.015em] text-cream">
-            Thirteen years, four numbers that matter.
+            <span className="text-[clamp(15px,2.6vw,28px)] font-medium text-gold">
+              Thirteen years
+            </span>
+            , four numbers that matter.
           </h2>
         </div>
         <div className="border-t border-cream/[0.18] pt-10">

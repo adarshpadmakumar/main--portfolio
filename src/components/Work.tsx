@@ -55,10 +55,10 @@ export default function Work() {
         </p>
       </div>
 
-      <div className="border border-ink/[0.16] bg-card">
+      <div className="overflow-hidden rounded-2xl border border-ink/[0.16] bg-card">
         <div className="group grid grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] items-center">
           <div className="flex flex-col gap-3.5 p-[clamp(26px,3.4vw,44px)]">
-            <span className="self-start bg-gold px-3.5 py-[7px] text-[10px] font-medium uppercase tracking-[0.14em] text-ink">
+            <span className="self-start rounded-full bg-gold px-3.5 py-[7px] text-[10px] font-medium uppercase tracking-[0.14em] text-ink">
               Latest · July 2026
             </span>
             <h3 className="mt-2 font-display text-[clamp(24px,3vw,32px)] font-medium leading-[1.18] text-ink">
@@ -82,11 +82,11 @@ export default function Work() {
           <div className="m-[clamp(20px,2.6vw,34px)]">
             {/* Source tags */}
             <div className="mb-3 flex items-center gap-2">
-              <span className="border border-ink/[0.18] px-3 py-[7px] text-[9px] font-medium uppercase tracking-[0.12em] text-ink/70 transition-colors group-hover:border-ink/[0.18] group-hover:text-ink/40">
+              <span className="rounded-full border border-ink/[0.18] px-3 py-[7px] text-[9px] font-medium uppercase tracking-[0.12em] text-ink/70 transition-colors group-hover:border-ink/[0.18] group-hover:text-ink/40">
                 <span className="mr-1.5 inline-block h-[6px] w-[6px] rounded-full bg-gold transition-opacity group-hover:opacity-0" />
                 Google Search Console
               </span>
-              <span className="border border-ink/[0.18] px-3 py-[7px] text-[9px] font-medium uppercase tracking-[0.12em] text-ink/40 transition-colors group-hover:border-gold/50 group-hover:text-ink/70">
+              <span className="rounded-full border border-ink/[0.18] px-3 py-[7px] text-[9px] font-medium uppercase tracking-[0.12em] text-ink/40 transition-colors group-hover:border-gold/50 group-hover:text-ink/70">
                 <span className="mr-1.5 inline-block h-[6px] w-[6px] rounded-full bg-gold opacity-0 transition-opacity group-hover:opacity-100" />
                 Google Analytics
               </span>
@@ -143,14 +143,14 @@ export default function Work() {
         {SECONDARY_CASES.map((item) => (
           <div key={item.title} className="group [perspective:1500px]">
             <div className="relative h-[820px] transition-transform duration-700 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] min-[860px]:h-[640px] min-[1180px]:h-[500px]">
-              <div className="absolute inset-0 flex flex-col gap-3 overflow-hidden border border-ink/[0.16] bg-card p-[34px] [backface-visibility:hidden]">
+              <div className="absolute inset-0 flex flex-col gap-3 overflow-hidden rounded-2xl border border-ink/[0.16] bg-card p-[34px] [backface-visibility:hidden]">
                 <div className="flex items-center justify-between gap-3 text-[10px] font-medium uppercase tracking-[0.14em] text-ink/50">
                   <span>{item.date}</span>
                   <span
                     className={
                       item.status === "Active"
-                        ? "bg-gold px-[11px] py-[5px] text-ink"
-                        : "border border-ink/30 px-[11px] py-[5px] text-ink"
+                        ? "rounded-full bg-gold px-[11px] py-[5px] text-ink"
+                        : "rounded-full border border-ink/30 px-[11px] py-[5px] text-ink"
                     }
                   >
                     {item.status}
@@ -235,7 +235,7 @@ export default function Work() {
                 </span>
               </div>
 
-              <div className="absolute inset-0 overflow-hidden border border-ink/[0.16] [backface-visibility:hidden] [transform:rotateY(180deg)]">
+              <div className="absolute inset-0 overflow-hidden rounded-2xl border border-ink/[0.16] [backface-visibility:hidden] [transform:rotateY(180deg)]">
                 <Image
                   src={item.image}
                   alt={`${item.title} website screenshot`}

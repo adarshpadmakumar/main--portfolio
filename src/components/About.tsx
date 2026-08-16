@@ -1,5 +1,6 @@
 import Logo from "./Logo";
 import Eyebrow from "./Eyebrow";
+import AboutIllustration from "./AboutIllustration";
 
 export default function About() {
   return (
@@ -17,7 +18,7 @@ export default function About() {
           The person who makes sure it actually ships.
         </h2>
       </div>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] items-start gap-[clamp(30px,4vw,64px)]">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-[clamp(30px,4vw,64px)]">
         <div className="flex flex-col gap-[18px]">
           <div className="flex h-[148px] w-[148px] items-center justify-center rounded-full bg-ink">
             <Logo size={40} />
@@ -32,10 +33,7 @@ export default function About() {
               Design · Dev · Growth · AI
             </div>
           </div>
-          <div className="flex items-center gap-2.5 pt-1.5 text-[10px] font-medium uppercase tracking-[0.16em] text-ink/[0.62]">
-            <span className="h-[7px] w-[7px] flex-none rounded-full bg-gold" />
-            Taking work for Q4
-          </div>
+          <AboutIllustration />
         </div>
         <div className="flex flex-col gap-[18px]">
           <p className="max-w-[68ch] text-[17px] leading-[1.7] text-ink/[0.82]">

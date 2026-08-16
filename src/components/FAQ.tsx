@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Eyebrow from "./Eyebrow";
 
 const FAQS = [
@@ -51,18 +54,26 @@ const FAQ_JSON_LD = {
 function FAQItem({
   q,
   a,
-  defaultOpen = false,
+  isOpen,
+  onToggle,
 }: {
   q: string;
   a: string;
-  defaultOpen?: boolean;
+  isOpen: boolean;
+  onToggle: () => void;
 }) {
   return (
     <details
-      open={defaultOpen}
+      open={isOpen}
       className="group border-b border-ink/[0.16] py-8 [&_summary::-webkit-details-marker]:hidden"
     >
-      <summary className="flex min-h-11 cursor-pointer items-center justify-between gap-6 font-display text-[22px] font-medium leading-[1.3] text-ink sm:text-[28px]">
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          onToggle();
+        }}
+        className="flex min-h-11 cursor-pointer items-center justify-between gap-6 font-display text-[22px] font-medium leading-[1.3] text-ink sm:text-[28px]"
+      >
         {q}
         <span
           aria-hidden="true"
@@ -79,6 +90,8 @@ function FAQItem({
 }
 
 export default function FAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
   return (
     <section
       id="faq"
@@ -100,7 +113,14 @@ export default function FAQ() {
       </div>
       <div className="flex flex-col">
         {FAQS.map((item, i) => (
-          <FAQItem key={item.q} {...item} defaultOpen={i === 0} />
+          <FAQItem
+            key={item.q}
+            {...item}
+            isOpen={openIndex === i}
+            onToggle={() =>
+              setOpenIndex((prev) => (prev === i ? null : i))
+            }
+          />
         ))}
       </div>
     </section>

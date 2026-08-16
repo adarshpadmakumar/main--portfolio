@@ -17,7 +17,7 @@ export default function Hero() {
     >
       <div className="mx-auto grid max-w-[1180px] grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] items-center gap-[clamp(36px,5vw,64px)] px-[clamp(20px,4vw,40px)]">
         <div className="flex flex-col gap-5">
-          <div className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.22em] text-gold">
+          <div className="text-[9px] font-medium uppercase tracking-[0.1em] text-gold sm:text-[10px] sm:tracking-[0.22em] sm:whitespace-nowrap">
             Freelance project manager · Bengaluru, India · Working worldwide
           </div>
           <h1 className="text-pretty font-display text-[clamp(30px,4.4vw,50px)] font-normal leading-[1.1] tracking-[-0.015em] text-cream">
@@ -58,13 +58,13 @@ export default function Hero() {
           <div className="flex flex-wrap gap-3 pt-1">
             <Link
               href="#contact"
-              className="inline-flex min-h-12 items-center rounded-md bg-gold px-[26px] py-4 text-[11px] font-medium uppercase tracking-[0.16em] text-ink hover:bg-gold-light"
+              className="inline-flex min-h-12 items-center rounded-2xl bg-gold px-[26px] py-4 text-[11px] font-medium uppercase tracking-[0.16em] text-ink hover:bg-gold-light"
             >
               Book a 15 minute call →
             </Link>
             <Link
               href="#work"
-              className="inline-flex min-h-12 items-center rounded-md border border-cream/[0.42] px-6 py-4 text-[11px] font-medium uppercase tracking-[0.16em] text-cream hover:border-gold"
+              className="inline-flex min-h-12 items-center rounded-2xl border border-cream/[0.42] px-6 py-4 text-[11px] font-medium uppercase tracking-[0.16em] text-cream hover:border-gold"
             >
               See case studies →
             </Link>
@@ -86,7 +86,7 @@ export default function Hero() {
           <div
             role="img"
             aria-label="Wireframe of the SIMS Capital loan calculator and application flow, built from scratch for the site relaunch."
-            className="border border-gold/30 bg-ink-dark/[0.55]"
+            className="overflow-hidden rounded-2xl border border-gold/30 bg-ink-dark/[0.55]"
           >
             <div className="flex items-center gap-2.5 border-b border-cream/[0.14] px-[18px] py-[13px]">
               <span className="h-2 w-2 rounded-full bg-cream/[0.28]" />
@@ -120,12 +120,12 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 border border-gold/30 bg-ink-dark/[0.55] px-[18px] py-[22px]">
+          <div className="flex flex-col gap-4 rounded-2xl border border-gold/30 bg-ink-dark/[0.55] px-[18px] py-[22px]">
             <div className="flex items-center justify-between gap-3">
               <span className="text-[9.5px] font-medium uppercase tracking-[0.18em] text-cream/[0.62]">
                 AI workflow · in production
               </span>
-              <span className="flex items-center gap-[7px] border border-gold/50 px-[11px] py-[5px] text-[9px] font-medium uppercase tracking-[0.14em] text-gold">
+              <span className="flex items-center gap-[7px] rounded-full border border-gold/50 px-[11px] py-[5px] text-[9px] font-medium uppercase tracking-[0.14em] text-gold">
                 <span className="relative flex h-[5px] w-[5px]">
                   <span className="absolute inline-flex h-full w-full rounded-full bg-gold opacity-75 motion-safe:animate-ping" />
                   <span className="relative inline-flex h-[5px] w-[5px] rounded-full bg-gold" />
@@ -136,7 +136,7 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-2">
               {["Intake", "Classify", "Draft"].map((step, i) => (
                 <span key={step} className="contents">
-                  <span className="border border-cream/20 px-[11px] py-2 text-[9px] font-medium uppercase tracking-[0.1em] text-cream/[0.78]">
+                  <span className="rounded-full border border-cream/20 px-[11px] py-2 text-[9px] font-medium uppercase tracking-[0.1em] text-cream/[0.78]">
                     {step}
                   </span>
                   <span
@@ -147,7 +147,7 @@ export default function Hero() {
                   </span>
                 </span>
               ))}
-              <span className="motion-safe:animate-[glow-pulse_2.4s_ease-in-out_infinite] border border-gold px-[11px] py-2 text-[9px] font-medium uppercase tracking-[0.1em] text-gold">
+              <span className="motion-safe:animate-[glow-pulse_2.4s_ease-in-out_infinite] rounded-full border border-gold px-[11px] py-2 text-[9px] font-medium uppercase tracking-[0.1em] text-gold">
                 Human review
               </span>
             </div>

@@ -106,11 +106,11 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] gap-px border border-cream/[0.16] bg-cream/[0.16]">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] gap-4">
           {SERVICES.map((service) => (
             <div
               key={service.title}
-              className="flex flex-col gap-3 bg-ink p-[34px] transition-colors hover:bg-ink-mid"
+              className="flex flex-col gap-3 rounded-2xl border border-cream/[0.16] bg-ink p-[34px] transition-colors hover:bg-ink-mid"
             >
               {service.icon}
               <h3 className="mt-2 font-display text-2xl font-medium text-cream">
@@ -123,7 +123,7 @@ export default function Services() {
                 {service.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="border border-gold/30 px-2.5 py-[5px] text-[9px] font-medium uppercase tracking-[0.12em] text-gold/90"
+                    className="rounded-full border border-gold/30 px-2.5 py-[5px] text-[9px] font-medium uppercase tracking-[0.12em] text-gold/90"
                   >
                     {tag}
                   </span>
@@ -132,7 +132,7 @@ export default function Services() {
             </div>
           ))}
 
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] items-center gap-[clamp(24px,3vw,44px)] bg-ink px-[34px] py-10 transition-colors hover:bg-ink-mid [grid-column:1/-1]">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] items-center gap-[clamp(24px,3vw,44px)] rounded-2xl border border-cream/[0.16] bg-ink px-[34px] py-10 transition-colors hover:bg-ink-mid [grid-column:1/-1]">
             <div className="flex flex-col gap-3">
               <svg {...ICON_PROPS}>
                 <circle cx="5.5" cy="6" r="2.4" />
@@ -153,13 +153,13 @@ export default function Services() {
             <div className="flex flex-wrap items-center gap-2.5">
               {AI_STEPS.map((step) => (
                 <span key={step} className="contents">
-                  <span className="border border-cream/[0.22] px-3 py-2.5 text-[9.5px] font-medium uppercase tracking-[0.12em] text-cream/80">
+                  <span className="rounded-full border border-cream/[0.22] px-3 py-2.5 text-[9.5px] font-medium uppercase tracking-[0.12em] text-cream/80">
                     {step}
                   </span>
                   <span className="text-gold">→</span>
                 </span>
               ))}
-              <span className="border border-gold px-3 py-2.5 text-[9.5px] font-medium uppercase tracking-[0.12em] text-gold">
+              <span className="rounded-full border border-gold px-3 py-2.5 text-[9.5px] font-medium uppercase tracking-[0.12em] text-gold">
                 In production
               </span>
             </div>
