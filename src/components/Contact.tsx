@@ -1,5 +1,5 @@
-import Script from "next/script";
 import Eyebrow from "./Eyebrow";
+import CalendlyEmbed from "./CalendlyEmbed";
 import { siteConfig } from "@/lib/site-config";
 
 const CONTACT_LINKS = [
@@ -64,15 +64,7 @@ export default function Contact() {
         </div>
 
         <div className="rounded-2xl border border-gold/30 bg-ink p-[clamp(16px,2vw,24px)]">
-          <div
-            className="calendly-inline-widget"
-            data-url="https://calendly.com/adarshpk-51/30min?background_color=0f2e23&text_color=f4f1f1&primary_color=f5f1e8"
-            style={{ minWidth: "320px", height: "700px" }}
-          />
-          <Script
-            src="https://assets.calendly.com/assets/external/widget.js"
-            strategy="lazyOnload"
-          />
+          <CalendlyEmbed />
         </div>
       </div>
     </section>
