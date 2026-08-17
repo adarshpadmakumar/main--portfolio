@@ -1,18 +1,28 @@
+"use client";
+
 import Eyebrow from "./Eyebrow";
 import CalendlyEmbed from "./CalendlyEmbed";
 import { siteConfig } from "@/lib/site-config";
+import { trackEvent } from "@/lib/analytics";
 
 const CONTACT_LINKS = [
-  { label: "Email", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
   {
-    label: "Phone & WhatsApp",
+    label: "Email",
+    value: siteConfig.email,
+    href: `mailto:${siteConfig.email}`,
+    event: "email_click",
+  },
+  {
+    label: "WhatsApp",
     value: siteConfig.phone,
-    href: `tel:${siteConfig.phoneHref}`,
+    href: siteConfig.whatsappUrl,
+    event: "whatsapp_click",
   },
   {
     label: "LinkedIn",
     value: siteConfig.linkedinLabel,
     href: siteConfig.linkedinUrl,
+    event: "linkedin_click",
   },
 ];
 
@@ -43,6 +53,9 @@ export default function Contact() {
               <a
                 key={link.label}
                 href={link.href}
+                onClick={() => trackEvent(link.event)}
+                target={link.label !== "Email" ? "_blank" : undefined}
+                rel={link.label !== "Email" ? "noopener noreferrer" : undefined}
                 className="flex items-center gap-3.5 border-b border-cream/[0.16] py-[18px] text-cream hover:text-gold"
               >
                 <span className="h-1.5 w-1.5 flex-none rounded-full bg-gold" />
@@ -56,10 +69,6 @@ export default function Contact() {
                 </span>
               </a>
             ))}
-          </div>
-          <div className="mt-3.5 flex items-center gap-3 text-[10px] font-medium uppercase tracking-[0.16em] text-cream/[0.68]">
-            <span className="h-2 w-2 flex-none rounded-full bg-gold" />
-            Two project slots open from October 2026
           </div>
         </div>
 

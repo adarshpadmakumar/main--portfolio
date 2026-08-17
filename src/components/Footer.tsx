@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
+import { trackEvent } from "@/lib/analytics";
 import CookiePreferencesButton from "./CookiePreferencesButton";
 
 export default function Footer() {
@@ -12,12 +15,16 @@ export default function Footer() {
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs normal-case tracking-normal">
           <a
             href={`mailto:${siteConfig.email}`}
+            onClick={() => trackEvent("email_click")}
             className="text-cream/[0.72] hover:text-gold"
           >
             {siteConfig.email}
           </a>
           <a
-            href={`tel:${siteConfig.phoneHref}`}
+            href={siteConfig.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent("whatsapp_click")}
             className="text-cream/[0.72] hover:text-gold"
           >
             {siteConfig.phone}

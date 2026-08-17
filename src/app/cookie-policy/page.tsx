@@ -23,9 +23,9 @@ const COOKIE_GROUPS = [
   },
   {
     name: "Analytics",
-    consent: "Set only after you accept",
+    consent: "Always active",
     description:
-      "Used to understand how visitors use the site, so pages and content can be improved. Loaded only after you click Accept on the cookie banner, and removed on your next visit if you reject or haven't chosen yet.",
+      "Used to understand how visitors use the site, so pages and content can be improved. Loaded on every visit.",
     cookies: [
       {
         name: "_ga, _ga_*",
@@ -141,15 +141,14 @@ export default function CookiePolicyPage() {
 
           <section className="flex flex-col gap-3">
             <h2 className="font-display text-2xl font-medium text-ink">
-              Managing your consent
+              Managing cookies
             </h2>
             <p className="text-[15px] leading-[1.8] text-ink/[0.78]">
-              You can accept or reject analytics cookies from the banner
-              shown on your first visit. To change your choice at any time,
-              use the button below or the &quot;Cookie preferences&quot;
-              link in the footer. You can also block or delete cookies
-              directly in your browser settings, though this may affect how
-              some parts of the site work.
+              The notice banner shown on your first visit is informational
+              and can be reopened at any time from the button below or the
+              &quot;Cookie preferences&quot; link in the footer. To block or
+              delete these cookies, use your browser&apos;s own settings,
+              though this may affect how some parts of the site work.
             </p>
             <div>
               <CookiePreferencesButton className="inline-flex min-h-11 items-center rounded-2xl border border-ink/[0.42] px-5 py-3 text-[10px] font-medium uppercase tracking-[0.16em] text-ink hover:border-ink" />

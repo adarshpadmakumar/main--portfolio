@@ -20,12 +20,19 @@ export default function CountUpStat({
   big?: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [count, setCount] = useState(0);
+  // Always renders the real value by default so a visitor never sees "0"
+  // if the animation below never triggers (fast scroll, reduced motion,
+  // or an IntersectionObserver that never fires). The count-up is a
+  // progressive-enhancement flourish layered on top, not a requirement.
+  const [count, setCount] = useState(value);
   const started = useRef(false);
 
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -33,6 +40,7 @@ export default function CountUpStat({
           if (entry.isIntersecting && !started.current) {
             started.current = true;
             const start = performance.now();
+            setCount(0);
 
             const tick = (now: number) => {
               const progress = Math.min((now - start) / duration, 1);

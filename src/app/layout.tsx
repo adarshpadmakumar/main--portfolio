@@ -4,6 +4,7 @@ import "./globals.css";
 import { siteConfig } from "@/lib/site-config";
 import { SERVICES } from "@/components/Services";
 import CookieConsent from "@/components/CookieConsent";
+import WhatsAppWidget from "@/components/WhatsAppWidget";
 
 const cinzel = Cinzel({
   variable: "--font-cinzel",
@@ -178,6 +179,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body className="bg-cream">
         <CookieConsent />
+        <WhatsAppWidget />
         <a
           href="#home"
           className="absolute left-[-9999px] top-0 z-[200] bg-gold px-5 py-3 text-[11px] font-medium uppercase tracking-[0.14em] text-ink focus:left-3 focus:top-3"
