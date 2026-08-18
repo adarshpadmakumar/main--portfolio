@@ -13,7 +13,7 @@ const CONTACT_LINKS = [
     event: "email_click",
   },
   {
-    label: "WhatsApp",
+    label: "Phone",
     value: siteConfig.phone,
     href: siteConfig.whatsappUrl,
     event: "whatsapp_click",
