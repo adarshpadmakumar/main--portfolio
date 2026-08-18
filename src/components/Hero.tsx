@@ -27,22 +27,11 @@ export default function Hero() {
           </h1>
           <p className="max-w-[56ch] text-base leading-[1.65] text-cream/[0.82]">
             I&apos;m Adarsh P Kumar, a freelance project manager based in
-            Bengaluru, India. I run end-to-end{" "}
-            <span className="font-medium text-cream">
-              Website design and development
-            </span>
-            , <span className="font-medium text-cream">UI/UX</span>,{" "}
-            <span className="font-medium text-cream">SaaS</span>,{" "}
-            <span className="font-medium text-cream">
-              Enterprise application
-            </span>
-            , <span className="font-medium text-cream">SEO growth</span>,{" "}
-            <span className="font-medium text-cream">Branding</span>, and{" "}
-            <span className="font-medium text-cream">AI automation</span>{" "}
-            projects, covering scope, schedule, budget, and launch.
+            Bengaluru, India. I run projects end to end, owning scope,
+            schedule, budget, and launch.
             <span className="mt-2 block font-medium text-cream">
-              With over 140 projects shipped and 13 years of delivery
-              experience, I have a 98% client-retention rate.
+              140+ projects shipped · 13 years of delivery experience · 98%
+              client retention.
             </span>
           </p>
           <div className="flex flex-wrap gap-2">
@@ -69,7 +58,7 @@ export default function Hero() {
               See case studies →
             </Link>
           </div>
-          <div className="flex flex-nowrap items-center gap-2.5 text-[8.5px] font-medium uppercase tracking-[0.06em] text-cream/[0.55] sm:gap-4 sm:text-[9px] sm:tracking-[0.1em] lg:gap-[22px] lg:text-[10px] lg:tracking-[0.14em]">
+          <div className="flex flex-wrap items-center gap-x-2.5 gap-y-2 text-[8.5px] font-medium uppercase tracking-[0.06em] text-cream/[0.55] sm:gap-x-4 sm:text-[9px] sm:tracking-[0.1em] lg:gap-x-[22px] lg:text-[10px] lg:tracking-[0.14em]">
             <span className="flex-none whitespace-nowrap">
               Reply within 1 working day
             </span>

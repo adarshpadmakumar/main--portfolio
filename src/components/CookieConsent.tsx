@@ -9,7 +9,7 @@ import {
   NOTICE_DISMISSED_EVENT,
 } from "@/lib/cookie-notice";
 
-const GA_MEASUREMENT_ID = "G-0ED5L9DVY8";
+const GA_MEASUREMENT_ID = "G-EWEFEMWG2R";
 const CLARITY_PROJECT_ID = "y3cjx31stt";
 
 export default function CookieConsent() {
